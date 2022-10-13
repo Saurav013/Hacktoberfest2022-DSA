@@ -4,7 +4,7 @@ int binarySearch(int arr[], int size, int key)
 {
     int start = 0;
     int end = size - 1;
-    int mid = (start + end) / 2;
+    int mid = start + (end - start)/2;  // When start and end are all about INT_MAX , then (start+end) of course will be overflow ! , To avoid this problem,we use it
     while (start <= end)
     {
         if (arr[mid] == key)
